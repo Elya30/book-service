@@ -75,7 +75,7 @@ public class BookServiceImpl implements BookService {
 		return publisher.getBooks().stream()
 				.map(b -> modelMapper.map(b, BookDto.class))
                 .toList();
-	}
+	} 
 
 	@Override
 	public Iterable<AuthorDto> findBookAuthors(String isbn) {
