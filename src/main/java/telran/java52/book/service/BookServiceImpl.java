@@ -30,7 +30,7 @@ public class BookServiceImpl implements BookService {
 	@Transactional(readOnly = true)
 	@Override
 	public Boolean addBook(BookDto bookDto) {
-		if (bookRepository.existsById(bookDto.getIsbn())) {
+		if (bookRepository.existById(bookDto.getIsbn())) {
 			return false;
 		}
 		Publisher publisher = publisherRepository.findById(bookDto.getPublisher())
