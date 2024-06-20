@@ -36,8 +36,8 @@ public class PublisherRepositoryImpl implements PublisherRepository {
 
 	@Override
 	public Publisher save(Publisher publisher) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(publisher);
+		return publisher;
 	}
 
 }

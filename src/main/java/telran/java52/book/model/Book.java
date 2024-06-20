@@ -35,7 +35,7 @@ public class Book implements Serializable {
 	String isbn;
 	@Column(name = "TITLE")
 	String title;
-	@ManyToMany
+	@ManyToMany   
 	@JoinTable(
 			name = "BOOK_AUTHORS", 
 			joinColumns = @JoinColumn(name = "BOOK_ISBN"),

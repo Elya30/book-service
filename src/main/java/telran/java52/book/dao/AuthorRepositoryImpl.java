@@ -22,8 +22,8 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 
 	@Override
 	public Author save(Author author) {
-		
-		return null;
+		em.persist(author);
+		return author;
 	}
 
 	@Override
