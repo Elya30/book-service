@@ -3,13 +3,9 @@ package telran.java52.book.model;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.fasterxml.jackson.core.sym.Name;
-
-import jakarta.persistence.Column;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -31,17 +27,10 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = -2188451692098630427L;
 	
 	@Id
-	@Column(name = "ISBN")
 	String isbn;
-	@Column(name = "TITLE")
 	String title;
-	@ManyToMany
-	@JoinTable(
-			name = "BOOK_AUTHORS", 
-			joinColumns = @JoinColumn(name = "BOOK_ISBN"),
-			inverseJoinColumns = @JoinColumn(name = "AUTHORS_NAME")
-			)
+	@ManyToMany(cascade = CascadeType.ALL)
 	Set<Author> authors;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	Publisher publisher;
 }
