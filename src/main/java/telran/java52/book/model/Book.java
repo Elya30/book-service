@@ -3,8 +3,6 @@ package telran.java52.book.model;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.fasterxml.jackson.core.sym.Name;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

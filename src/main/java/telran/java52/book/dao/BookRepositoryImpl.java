@@ -9,10 +9,8 @@ import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import telran.java52.book.model.Book;
-import telran.java52.book.model.Publisher;
 
 @Repository
-
 public class BookRepositoryImpl implements BookRepository {
 
 	@PersistenceContext
@@ -20,7 +18,7 @@ public class BookRepositoryImpl implements BookRepository {
 
 	@Override
 	public Stream<Book> findByAuthorsName(String name) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -54,7 +52,7 @@ public class BookRepositoryImpl implements BookRepository {
 
 	@Override
 	public void deleteById(String isbn) {
-		// TODO Auto-generated method stub
+		em.remove(em.find(Book.class, isbn));
 
 	}
 
